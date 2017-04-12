@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListView
 {
-    class Character
+    public class Character
     {
         public string Name { get; set; }
         public string Species { get; set; }

@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ListView"
-             x:Class="ListView.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+             x:Class="ListView.MainPage"
+             BindingContext="{x:Static local:Character.Characters}"
+             Title="Lord of the Rings">
+             <ListView ItemsSource="{Binding .}"
+                       ItemTapped="OnItemTapped"/>
 
 </ContentPage>
