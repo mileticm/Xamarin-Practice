@@ -5,7 +5,25 @@
              x:Class="ListView.MainPage"
              BindingContext="{x:Static local:Character.Characters}"
              Title="Lord of the Rings">
-             <ListView ItemsSource="{Binding .}"
-                       ItemTapped="OnItemTapped"/>
-
+    <ListView ItemsSource="{Binding .}"
+                       RowHeight="60"
+                       ItemTapped="OnItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" WidthRequest="75" Source ="{Binding ImageUrl}" Aspect="AspectFit" />
+                        <StackLayout Grid.Column="1">
+                            <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="{Binding Species}" FontSize="Small"/>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
